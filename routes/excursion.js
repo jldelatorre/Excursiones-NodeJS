@@ -15,7 +15,7 @@ const {
   excursionBuscar,
   excursionGetUltimas,
   excursionVender,
-} = require("../controllers/casaController");
+} = require("../controllers/excursionController");
 
 
 router.get("/ultimas", excursionGetUltimas);

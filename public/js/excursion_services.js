@@ -37,7 +37,10 @@ const getExcursion = (id) => {
     axios.get(`api/excursion/id?ID=${id}`)
         .then(function (response) {
         // handle success
-        console.log(response);
+        $('#blog-image1').attr("src",`${response.data.excursion.img[0]}`);
+        $('#blog-image2').attr("src",`${response.data.excursion.img[1]}`);
+        
+        console.log(el);
     })
     .catch(function (error) {
         // handle error

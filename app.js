@@ -14,7 +14,7 @@ const hbs = require('hbs');
 
 //import routes
 const indexRouter = require("./routes/index");
-const casasRouter = require("./routes/casas");
+const excursionesRouter = require("./routes/excursion");
 const emailRouter = require("./routes/email");
 
 //import db
@@ -48,7 +48,7 @@ app.use(
 
 //routes
 app.use("/", indexRouter);
-app.use("/api/excursion", casasRouter);
+app.use("/api/excursion", excursionesRouter);
 app.use("/api/email", emailRouter);
 
 // Conectar a la DB

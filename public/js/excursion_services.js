@@ -40,7 +40,24 @@ const getExcursion = (id) => {
         $('#blog-image1').attr("src",`${response.data.excursion.img[0]}`);
         $('#blog-image2').attr("src",`${response.data.excursion.img[1]}`);
         
-        console.log(el);
+        response.data.excursion.img.forEach(element => {
+            console.log(element);
+            $('#portfolio').prepend(
+                `<div class="col-12 col-sm-6 col-lg-3 single_portfolio_item  wow fadeInUp" data-wow-delay="100ms" >
+                    <!-- Portfolio Thumbnail -->
+                    <div class="portfolio-thumbnail bg-img" style="background-image: url(${element});"></div>
+                    <!-- Portfolio Hover Text -->
+                    <div class="portfolio-hover-overlay">
+                        <a href="${element}" class="portfolio-img d-flex align-items-center justify-content-center" title="Portfolio 5">
+                            <div class="port-hover-text">
+                                <h3>Minimal Flower Store</h3>
+                                <h5>Office Plants</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>`
+            )
+        });
     })
     .catch(function (error) {
         // handle error

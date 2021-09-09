@@ -34,6 +34,7 @@ const getListado = () => {
 }
 
 const getExcursion = (id) => {
+    console.log(jq);
     axios.get(`api/excursion/id?ID=${id}`)
         .then(function (response) {
         // handle success
@@ -42,7 +43,7 @@ const getExcursion = (id) => {
         
         response.data.excursion.img.forEach(element => {
             console.log(element);
-            $('#portfolio').prepend(
+            $('#portfolio').append(
                 `<div class="col-12 col-sm-6 col-lg-3 single_portfolio_item  wow fadeInUp" data-wow-delay="100ms" >
                     <!-- Portfolio Thumbnail -->
                     <div class="portfolio-thumbnail bg-img" style="background-image: url(${element});"></div>
@@ -58,6 +59,7 @@ const getExcursion = (id) => {
                 </div>`
             )
         });
+        loadPortafolio(jq);
     })
     .catch(function (error) {
         // handle error

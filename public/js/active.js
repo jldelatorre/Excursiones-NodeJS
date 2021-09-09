@@ -1,6 +1,7 @@
+var jq;
 (function ($) {
     'use strict';
-
+    jq=$;
     var browserWindow = $(window);
 
     // :: 1.0 Preloader Active Code
@@ -23,7 +24,7 @@
         $('.search-form').removeClass('active');
     });
 
-    // :: 4.0 Sliders Active Code
+    /*// :: 4.0 Sliders Active Code
     if ($.fn.owlCarousel) {
         var welcomeSlide = $('.hero-post-slides');
         var testiSlides = $('.testimonials-slides');
@@ -100,7 +101,7 @@
         $('.video-icon').magnificPopup({
             type: 'iframe'
         });
-    }
+    }*/
 
     // :: 7.0 Barfiller Active Code
     if ($.fn.barfiller) {
